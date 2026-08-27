@@ -1,0 +1,29 @@
+Top 10 cap cau hoi giong nhau nhat trong data/sample_queries.jsonl
+(score | co bi false-hit guard chan khong | cap cau hoi)
+----------------------------------------------------------------------------------------------------
+0.9763 | khong chan               | 'Summarize the refund policy for a student wh'
+                                | 'Summarize the refund policy for a student wh'
+0.9763 | khong chan               | 'Summarize the refund policy for a student wh'
+                                | 'Summarize the refund policy for a student wh'
+0.9688 | CHAN (khac so 4 chu so)  | 'Summarize the refund policy for a student wh'
+                                | 'Summarize the refund policy for a student wh'
+0.9687 | khong chan               | 'Summarize the admission FAQ in 5 bullets.'
+                                | 'Summarize the admission FAQ in 3 bullets.'
+0.9574 | CHAN (khac so 4 chu so)  | 'What is the tuition fee for the 2024 academi'
+                                | 'What is the tuition fee for the 2025 academi'
+0.4577 | CHAN (khac so 4 chu so)  | 'What is the tuition fee for the 2025 academi'
+                                | 'What is the SSN for employee 1234?'
+0.4577 | CHAN (khac so 4 chu so)  | 'What is the tuition fee for the 2024 academi'
+                                | 'What is the SSN for employee 1234?'
+0.4194 | khong chan               | 'Summarize the refund policy for a student wh'
+                                | 'What is the tuition fee for the 2024 academi'
+0.4160 | khong chan               | 'Explain circuit breaker states in one paragr'
+                                | 'Explain the difference between retry and cir'
+0.4074 | khong chan               | 'Summarize the refund policy for a student wh'
+                                | 'Summarize the admission FAQ in 5 bullets.'
+
+threshold 0.80:  3 cap cau hoi KHAC NHAU se dung chung 1 cau tra loi
+threshold 0.85:  3 cap cau hoi KHAC NHAU se dung chung 1 cau tra loi
+threshold 0.90:  3 cap cau hoi KHAC NHAU se dung chung 1 cau tra loi
+threshold 0.92:  3 cap cau hoi KHAC NHAU se dung chung 1 cau tra loi
+threshold 0.95:  3 cap cau hoi KHAC NHAU se dung chung 1 cau tra loi

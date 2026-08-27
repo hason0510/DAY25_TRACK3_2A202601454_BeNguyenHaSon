@@ -1,0 +1,24 @@
+========================================================================
+1. SHARED STATE - instance A writes, instance B reads
+========================================================================
+  A.set('Explain circuit breaker states in one paragraph.')
+  B.get(...) -> ('[primary] circuit breaker has three states...', score=1.0)
+  SHARED STATE OK: True
+
+========================================================================
+2. PRIVACY GUARDRAIL - sensitive query is neither stored nor served
+========================================================================
+  A.set('Give me the current account balance for user 123.')
+  keys in Redis after set: 1 (unchanged - nothing written)
+  A.get(...) -> (None, score=0.0)
+  GUARDRAIL OK: True
+
+========================================================================
+3. FALSE-HIT DETECTION - same wording, different year
+========================================================================
+  cached: 'What is the tuition fee for the 2024 academic year?'
+  asked : 'What is the tuition fee for the 2025 academic year?'
+  raw similarity = 0.9574  (>= threshold 0.92 - would have been served)
+  A.get(...) -> (None, score=0.9574)
+  false_hit_log = [{'reason': 'date_or_number_mismatch', 'query': 'What is the tuition fee for the 2025 academic year?', 'cached_key': 'What is the tuition fee for the 2024 academic year?', 'score': 0.9574468085106383}]
+  FALSE-HIT REFUSED: True

@@ -4,5 +4,8 @@ __pycache__/
 .ruff_cache/
 .mypy_cache/
 *.pyc
-reports/metrics.json
-reports/final_report.md
+
+# reports/metrics.json and reports/final_report.md are REQUIRED deliverables
+# and are deliberately NOT ignored.
+.idea/
+.DS_Store

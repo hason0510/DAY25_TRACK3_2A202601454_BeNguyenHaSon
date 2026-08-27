@@ -1,3 +1,3 @@
-"""Day 10 reliability lab package."""
+"""Reliability lab package - gateway, circuit breaker, cache, chaos, metrics."""
 
-__all__ = ["config", "providers", "circuit_breaker", "cache", "gateway", "metrics"]
+__all__ = ["cache", "circuit_breaker", "config", "gateway", "metrics", "providers"]
